@@ -1,18 +1,18 @@
 import React from 'react';
 
-const menuList = ['Home', 'Admission', 'Login', 'About_Us', 'Contact']
+const menuList = ['Home', 'Admission', 'Login', 'Counter_App', 'State_Learning', 'Mathmetical_App']
 
-const NavigationComp = (props) => {
+const NavigationComp = ({ selectedMenu, onSetSelectedMenu }) => {
     return <div className='d-flex justify-content-center mb-4'>
         <ul className='list-group d-flex flex-row'>
             {menuList.map((menuItem) => {
                 return <li
                     key={menuItem}
                     className='list-group-item'
-                    onClick={() => props.onSetSelectedMenu(menuItem)}
+                    onClick={() => onSetSelectedMenu(menuItem)}
                     style={{ 
-                        color: props.selectedMenu === menuItem ? 'white' : 'black',
-                        backgroundColor: props.selectedMenu === menuItem ? 'black' : 'white'
+                        color: selectedMenu === menuItem ? 'white' : 'black',
+                        backgroundColor: selectedMenu === menuItem ? 'black' : 'white'
                     }}
                 >
                     {menuItem}

@@ -8,10 +8,13 @@ import RegistrationForm from './RegistrationForm'
 import LoginComp from './login';
 import LoginOutput from './LoginOutput';
 import { useState } from 'react';
+import CounterApp from './Counter_App';
+import StateLearning from './StateLearning';
+import MathmeticalApp from './Mathmetical_App'
 
 
 function App() {
-
+  
   const [selectedMenu, setSelectedMenu] = useState('Home');
 
   let comp = '';
@@ -33,17 +36,29 @@ function App() {
         <LoginOutput />
       </div>
     </div>
+  } else if(selectedMenu === 'Counter_App') {
+    comp = <CounterApp />;
+  }  else if(selectedMenu === 'State_Learning') {
+    comp = <StateLearning />;
+  } else if(selectedMenu ==='Mathmetical_App') {
+    comp = <MathmeticalApp />;
   } else {
     comp = <h3 className='text-center'>You are at {selectedMenu} Page</h3>
   }
 
   return (
     <div className='container pt-4'>
-      <NavigationComp selectedMenu={selectedMenu} onSetSelectedMenu={(menu) => setSelectedMenu(menu)} />
+      <NavigationComp selectedMenu={selectedMenu} onSetSelectedMenu={(menuItem) => setSelectedMenu(menuItem)} />
       {comp}
       <Footer />
+     
     </div>
+    
+
   );
+  
+
 }
+
 
 export default App;
