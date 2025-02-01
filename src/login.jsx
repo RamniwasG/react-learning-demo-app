@@ -6,6 +6,8 @@ const LoginComp = ({ formTitle, formAttr }) => {
     // const [loginObject, setLoginObject] = useState({});
      const [loginObject, setLoginObject] = useState({});
 
+     const [jsonOutput, setJsonOutput] = useState("")
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setLoginObject({
@@ -17,7 +19,11 @@ const LoginComp = ({ formTitle, formAttr }) => {
 
     const handleSubmit = (e) => {
          e.preventDefault();
-         console.log(JSON.stringify(loginObject));
+        //  console.log(JSON.stringify(loginObject));
+    }
+
+    const printJson = () => {
+        setJsonOutput(JSON.stringify(loginObject))
     }
 
     // const h1Style = {
@@ -38,9 +44,16 @@ const LoginComp = ({ formTitle, formAttr }) => {
             <div className='form-group'>
                 <label htmlFor='password'>{formAttr.password}</label>
                 <input type='password' id='password' name='password' className='form-control mb-2' placeholder='Your password' onChange={handleChange}  />
-                <button type="submit" className="btn btn-primary mb-2 w-50">Submit</button>
+                {/* <button type="submit" className="btn btn-primary mb-2 w-50">Submit</button> */}
+                <button onClick={printJson} className='btn btn-info mb-2 w-50'> Print JSON</button>
             </div>
         </form>
+        <div className="row">
+          <div className='col-12'>
+            <h2>JSON Output</h2>
+            <pre>{jsonOutput}</pre>
+          </div>
+        </div>
     </div>
 }
 

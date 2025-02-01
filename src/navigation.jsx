@@ -1,10 +1,13 @@
 import React from 'react';
 
-const menuList = ['Home', 'Admission', 'Login', 'Counter_App', 'State_Learning', 'Mathmetical_App']
+const menuList = ['Home', 'Admission', 'Login', 'Counter_App',
+        'State_Learning', 'Mathmetical_App', 'State_lifting',
+        'ParentChildComm',
+    ]
 
 const NavigationComp = ({ selectedMenu, onSetSelectedMenu }) => {
     return <div className='d-flex justify-content-center mb-4'>
-        <ul className='list-group d-flex flex-row'>
+        <ul className='list-group d-flex flex-col'>
             {menuList.map((menuItem) => {
                 return <li
                     key={menuItem}

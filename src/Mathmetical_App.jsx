@@ -32,7 +32,7 @@ const MathmeticalApp = () => {
         <h2>Calculation Using Input Box:</h2>
         <div className='row'>
             <div className=' col-6 form-group'>
-                <label htmlFor='radius'> Enter Number</label>
+                {/* <label htmlFor='radius'> Enter Number</label> */}
                 <input type='text'
                  name='radius'
                 style={{textAlign:'center'}}

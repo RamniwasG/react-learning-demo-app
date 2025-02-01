@@ -30,9 +30,9 @@ const StateLearning = () => {
             <label htmlFor='radius'>Radius</label>
             <input type='text' name='radius' className='form-control w-50' placeholder='enter radius' onChange={handleRadiusChange} value={radius} />
         </div>
-        <button type='button' className='btn btn-secondary btn-md w-50 mt-3' onClick={handleCalculateClick}>Calculate</button>
+        <button type='button' className='btn text-primary btn-info  btn-md w-50 mt-3' onClick={handleCalculateClick}>Calculate</button>
         <div className='mt-3'>
-            <b>Result:</b> {area}
+            <b>Result:</b> {area} <hr />
          </div> 
     </div>
 }
