@@ -3,7 +3,7 @@ import React from 'react';
 const LoginFormOutput = () => {
     return <div className='container mt-4' style={{
         backgroundColor: 'rgb(47 28 28 / 13%',
-        color: 'white',
+        color: 'blue',
         minHeight: '250px',
         textAlign: 'center',
         padding: '.5rem'

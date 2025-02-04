@@ -36,7 +36,7 @@ const StateLifting = () => {
                     width={width}
                     height={height}
                     onAreaCalcResult={handleCalcAreaOfCube}
-                    result1={result2}
+                    result={result2}
                 />
             </div>
         </div>

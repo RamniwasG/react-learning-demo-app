@@ -1,7 +1,7 @@
 // import React, {useState} from 'react';
 import React, {useState} from 'react';
 
-const LoginComp = ({ formTitle, formAttr }) => {
+const LoginComp = ({ formTitle, formAttr, setLoginJsonData }) => {
 
     // const [loginObject, setLoginObject] = useState({});
      const [loginObject, setLoginObject] = useState({});
@@ -10,20 +10,22 @@ const LoginComp = ({ formTitle, formAttr }) => {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setLoginObject({
+        const newObj = {
             ...loginObject,
             [name]: value
-        });
+        }
+        setLoginObject(newObj);
     }
 
 
     const handleSubmit = (e) => {
-         e.preventDefault();
-        //  console.log(JSON.stringify(loginObject));
+        e.preventDefault();
+        // console.log(JSON.stringify(loginObject));
     }
 
-    const printJson = () => {
+    const onLoginClick = () => {
         setJsonOutput(JSON.stringify(loginObject))
+        setLoginJsonData(loginObject)
     }
 
     // const h1Style = {
@@ -45,7 +47,7 @@ const LoginComp = ({ formTitle, formAttr }) => {
                 <label htmlFor='password'>{formAttr.password}</label>
                 <input type='password' id='password' name='password' className='form-control mb-2' placeholder='Your password' onChange={handleChange}  />
                 {/* <button type="submit" className="btn btn-primary mb-2 w-50">Submit</button> */}
-                <button onClick={printJson} className='btn btn-info mb-2 w-50'> Print JSON</button>
+                <button onClick={onLoginClick} className='btn btn-info mb-2 w-50'>Login</button>
             </div>
         </form>
         <div className="row">
