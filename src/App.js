@@ -18,6 +18,9 @@ import UserNameComponant from './ChangeLabel/UserName';
 import UserNameOutput from './ChangeLabel/UserNameOutput';
 import FormDisplayComp from './ChangeLabel/FormDisplay';
 import FormComponant from './ChangeLabel/Form';
+import PostList from './learn_useffect/postList';
+import BasicCard from './learn_useffect/basicCard';
+import TableData from './learn_useffect/table';
 
 
 function App() {
@@ -149,7 +152,14 @@ function App() {
     comp = <MathmeticalApp />;
   } else if(selectedMenu ==='State_lifting') {
     comp = <StateLifting />;
-  } else {
+  } else if(selectedMenu === 'BasicCard') {
+    comp = <BasicCard />;
+  } else if(selectedMenu ==='Learn_useEffect') {
+    comp = <PostList />;
+  } else if(selectedMenu === 'TableData') {
+    comp = <TableData />;
+  } 
+  else {
     comp = <h3 className='text-center'>You are at {selectedMenu} Page</h3>
   }
 

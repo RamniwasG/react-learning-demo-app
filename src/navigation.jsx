@@ -2,7 +2,7 @@ import React from 'react';
 
 const menuList = ['Home', 'Admission', 'Login', 'Counter_App',
         'State_Learning', 'Mathmetical_App', 'State_lifting',
-        'label', 'userName', 'Form', 'Calculaion Area',
+        'label', 'userName', 'Form', 'Calculaion Area', 'Learn_useEffect', 'BasicCard', 'TableData'
     ]
 
 const NavigationComp = ({ selectedMenu, onSetSelectedMenu }) => {
