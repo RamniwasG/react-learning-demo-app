@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const UserNameComponant = ({ setUserData }) => {
+const UserNameComponant = ({ setLabelData }) => {
 
     const [userName, setuserName] = useState('');
     const [password, setPassword] = useState('');
@@ -27,7 +27,7 @@ const UserNameComponant = ({ setUserData }) => {
         //     'bgcolor': bgcolor
         // }
         // console.log(JSON.stringify(obj))
-        setUserData(userName,password)
+        setLabelData(userName,password)
     }
 
 

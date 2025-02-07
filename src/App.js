@@ -16,6 +16,8 @@ import LabelComp from './ChangeLabel/Label';
 import LabelOutput from './ChangeLabel/LabelOutput';
 import UserNameComponant from './ChangeLabel/UserName';
 import UserNameOutput from './ChangeLabel/UserNameOutput';
+import FormDisplayComp from './ChangeLabel/FormDisplay';
+import FormComponant from './ChangeLabel/Form';
 
 
 function App() {
@@ -27,6 +29,13 @@ function App() {
   const [bgcolor, setBgColor] = useState('')
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
+  const [fName, setFname] = useState(''); 
+  const [lname, setlName] = useState('');
+  const [user, setUser] = useState('N/A');
+  const [userInfoObj, setUserInfoObj] = useState({});
+
+
+  
 
   const handleSelectMenuItem = (menuItem) => {
     setSelectedMenu(menuItem)
@@ -46,6 +55,16 @@ function App() {
     setUserName(userName)
     setPassword(password)
 }
+ const setFormData = (fName, lname, email, password) => {
+    setFname(fName)
+    setlName(lname)
+    setUser(email)
+    setPassword(password)
+ }
+
+ const setJsonFormData = (a) => {
+  setUserInfoObj(a)
+ }
 
   const setOutputJsonData=(userObject) => {
     setUserObject(userObject)
@@ -103,6 +122,24 @@ function App() {
       <div className='col-6'>
         <UserNameOutput userName={userName} password={password} />
       </div>
+    </div>
+  } else if(selectedMenu === 'Form') {
+    comp = <div className='row'>
+      <div className='col-6'>
+        <FormComponant setFormData={setFormData} setJsonFormData={setJsonFormData}/> 
+      </div>
+      <div className='col-6'>
+        <FormDisplayComp
+          fName={fName}
+          lname={lname}
+          user={user}
+          password={password}
+          color={color}
+          bgcolor={bgcolor}
+          userInfoObj={userInfoObj}
+        />
+      </div>
+
     </div>
   } else if(selectedMenu === 'Counter_App') {
     comp = <CounterApp />;

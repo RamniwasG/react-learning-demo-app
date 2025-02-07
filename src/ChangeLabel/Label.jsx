@@ -1,10 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
     const LabelComp = ({ setLabelData }) => {
 
         const [label, setLabel] = useState('');
         const [color, setColor] = useState('');
         const [bgcolor, setBgColor] = useState('');
+        const [fnameError, setFnameError] = useState(false)
+
+        useEffect(() => {
+            if(label[0] === '1') {
+                setFnameError(true)
+            } else {
+                setFnameError(false)
+            }
+        }, [label])
 
         const handleLabelChange = (event) => {
             const { value } = event.target;
@@ -39,6 +48,7 @@ import React, {useState} from 'react';
         <div className='mb-2'>
             <lebel htmlFor="label">Label</lebel>
             <input type="text" name="label" className='form-control mb-3' onChange={handleLabelChange} />
+            {fnameError && <span className='error'>Label should be string only</span>}
         </div>
         <div className='mb-2'>
             <lebel htmlFor="fname">Color</lebel>
