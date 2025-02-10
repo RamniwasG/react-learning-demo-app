@@ -19,8 +19,15 @@ import UserNameOutput from './ChangeLabel/UserNameOutput';
 import FormDisplayComp from './ChangeLabel/FormDisplay';
 import FormComponant from './ChangeLabel/Form';
 import PostList from './learn_useffect/postList';
+import UserComp from './learn_useffect/usersList';
 import BasicCard from './learn_useffect/basicCard';
 import TableData from './learn_useffect/table';
+import UsersBiodata from './learn_useffect/usersBiodata';
+import Apps from './Apps';
+import UserName from './UserName';
+
+
+
 
 
 function App() {
@@ -158,8 +165,18 @@ function App() {
     comp = <PostList />;
   } else if(selectedMenu === 'TableData') {
     comp = <TableData />;
-  } 
-  else {
+  } else if(selectedMenu === 'UserComp') {
+    comp = <UserComp />;
+  } else if(selectedMenu === 'UsersBiodata') {
+    comp = <UsersBiodata formAttr={{
+      heading:'Users Biodata', 
+    }}
+    />;
+  } else if(selectedMenu === 'Apps') {
+    comp = <Apps backgroundColor="lightblue"/>;
+  } else if(selectedMenu === 'UserName') {
+    comp = <UserName textColor="brown" bgcolor="blue" />;
+  } else {
     comp = <h3 className='text-center'>You are at {selectedMenu} Page</h3>
   }
 

@@ -4,16 +4,28 @@ const PostList = () => {
 
     const [posts, setPosts] = useState(null);
     const [loading, setLoading] = useState([false])
+    // const [postId, setPostId] = useState(1);
 
     useEffect(() => {
         setLoading(true)
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('https://jsonplaceholder.typicode.com/comments')
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
                 setLoading(false)
             })
     }, [])
+
+    // // useEffect(() => {
+    // //     setLoading(true)
+    // //     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+    // //         .then(response => response.json())
+    // //         .then(data => {
+    // //             setPosts(data)
+    // //             setLoading(false)
+    // //         })
+    // }, [postId])
+
     return <div className="m-3">
         <h2 className="text-center text-warning
         ">Temporary Data:</h2>

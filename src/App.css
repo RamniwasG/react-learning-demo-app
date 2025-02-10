@@ -7,10 +7,17 @@
 }
 
 .w-15 {
-    width: 15%;
+    width: 5%;
 }
 
 .w-55 {
-    width: 55%;
+    width: 20%;
 }
 
+thead tr > th {
+    font-weight: bold;
+    background-color: black !important;
+}
+.heading {
+    border-bottom: 4px dashed rgb(225, 104, 104);
+}
