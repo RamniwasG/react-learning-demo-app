@@ -25,6 +25,8 @@ import TableData from './learn_useffect/table';
 import UsersBiodata from './learn_useffect/usersBiodata';
 import Apps from './Apps';
 import UserName from './UserName';
+import PhotoList from './learn_useffect/PhotoList';
+import AlbumList from './learn_useffect/albumList';
 
 
 
@@ -176,6 +178,10 @@ function App() {
     comp = <Apps backgroundColor="lightblue"/>;
   } else if(selectedMenu === 'UserName') {
     comp = <UserName textColor="brown" bgcolor="blue" />;
+  } else if(selectedMenu === 'PhotosList') {
+    comp = <PhotoList />;
+  } else if (selectedMenu === 'AlbumList') {
+    comp = <AlbumList />
   } else {
     comp = <h3 className='text-center'>You are at {selectedMenu} Page</h3>
   }
@@ -195,9 +201,6 @@ function App() {
     
 
   );
-  
-
 }
-
 
 export default App;

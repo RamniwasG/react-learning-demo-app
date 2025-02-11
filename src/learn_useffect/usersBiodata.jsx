@@ -32,13 +32,12 @@ function UsersBiodata () {
 
         <h1>Selected User Info:</h1>
         {JSON.stringify(selectedUser)}
-        <button onClick={() => setSelectedUser(null)} className="btn btn-secondary w-25">Clear</button>
+        <button onClick={() => setSelectedUser()} className="btn" style={{color: 'red', backgroundColor:'blue',
+             width:'20%', fontWeight: 'bold', fontSize: 'large'}}>Clear</button>
         <hr/>
         <h1 className="text-center heading text-warning mt-5">user BioData</h1>
         {!biodata && loading && <span>Loading...</span>}
         {biodata && biodata.length === 0 && !loading && <span>No data found</span>}
-        {/* {user && user.length === 0 && !loading && <span>No Data Found </span>} */}
-
         <table className="table table-stripe">
                 <thead>
                     <tr className="text-primary">
@@ -63,7 +62,7 @@ function UsersBiodata () {
                 <tbody>
                     {biodata && biodata.length > 0  && biodata.map((user, index) =>{
                         return <tr key={user.id+index}
-                            className={user.id === selectedUser.id ? 'table-danger' : 'table-primary'}
+                            className={user.id === selectedUser?.id ? 'table-danger' : 'table-primary'}
                             onClick={() => handleUserItemClick(user)}
                         >
                         <td>{user.id}</td>

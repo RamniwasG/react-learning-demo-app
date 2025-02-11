@@ -4,8 +4,7 @@ const ContainerComp = ({formAttr, setOutputJsonData}) => {
 
     const [userObject, setUserObject] = useState({});
 
-    const [jsonOutput, setJsonOutput] = useState(" vikash");
-    
+    const [jsonOutput, setJsonOutput] = useState();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -19,7 +18,7 @@ const ContainerComp = ({formAttr, setOutputJsonData}) => {
         e.preventDefault();
         // console.log(JSON.stringify(userObject));
     }
-
+   
     const onLoginOutputClick = () => {
         setJsonOutput(JSON.stringify(userObject));
         setOutputJsonData(userObject)
