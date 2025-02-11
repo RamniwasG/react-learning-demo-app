@@ -19,10 +19,14 @@ function UsersBiodata () {
     }, [])
 
 
-    const handleUserItemClick = (userInfo) => {
-        setSelectedUser(userInfo);
+    const handleUserItemClick = (user) => {
+        setSelectedUser(user);
     }
 
+
+    // render() {
+        
+    // }
 
     return  <div>
 
@@ -35,7 +39,7 @@ function UsersBiodata () {
         {biodata && biodata.length === 0 && !loading && <span>No data found</span>}
         {/* {user && user.length === 0 && !loading && <span>No Data Found </span>} */}
 
-        <table className="table table-primary">
+        <table className="table table-stripe">
                 <thead>
                     <tr className="text-primary">
                         <th className=" text-white ">Id</th>
@@ -57,8 +61,11 @@ function UsersBiodata () {
                     </tr>
                 </thead>
                 <tbody>
-                    {biodata && biodata.length > 0  && biodata.map((user) =>{
-                        return <tr key={user.id}>
+                    {biodata && biodata.length > 0  && biodata.map((user, index) =>{
+                        return <tr key={user.id+index}
+                            className={user.id === selectedUser.id ? 'table-danger' : 'table-primary'}
+                            onClick={() => handleUserItemClick(user)}
+                        >
                         <td>{user.id}</td>
                         <td>{user.name}</td>
                         <td>{user.username}</td>
@@ -76,7 +83,6 @@ function UsersBiodata () {
                         <td>{user.company.bs}</td> */}
                         <td style={{textDecoration: 'underline', cursor: cursorStyle }}
                             onMouseOver={() => setCursorStyle('pointer')}
-                            onClick={() => handleUserItemClick(user)}
                         >View</td>
                      </tr>
                     })}             
