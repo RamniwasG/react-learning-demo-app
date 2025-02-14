@@ -27,10 +27,7 @@ import Apps from './Apps';
 import UserName from './UserName';
 import PhotoList from './learn_useffect/PhotoList';
 import AlbumList from './learn_useffect/albumList';
-
-
-
-
+import FetchUserById from './learn_useffect/FetchUserById';
 
 function App() {
   const [selectedMenu, setSelectedMenu] = useState('Home');
@@ -182,6 +179,8 @@ function App() {
     comp = <PhotoList />;
   } else if (selectedMenu === 'AlbumList') {
     comp = <AlbumList />
+  } else if (selectedMenu === 'FetchUserById') {
+    comp = <FetchUserById />
   } else {
     comp = <h3 className='text-center'>You are at {selectedMenu} Page</h3>
   }

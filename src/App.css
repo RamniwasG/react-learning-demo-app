@@ -21,3 +21,6 @@ thead tr > th {
 .heading {
     border-bottom: 4px dashed rgb(225, 104, 104);
 }
+
+
+/* : (key === 'company' ? `${key} : ${user[key].name}, ${user[key].bs}` : '')    // for company object */
