@@ -33,7 +33,7 @@ const UserNameComponant = ({ setLabelData }) => {
 
     return  <div>
          <form onSubmit={handleSubmit}>
-         <h3 className='text-center'>Change the label of 2nd column label</h3>
+         <h3 className='text-center'>Change the label of 2nd column label updated</h3>
         <div className='mb-2'>
             <lebel htmlFor="label">UserId</lebel>
             <input type="text" name="label" className='form-control mb-3' onChange={handleUserChange} />
