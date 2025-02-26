@@ -14,8 +14,10 @@ import MathmeticalApp from './Mathmetical_App';
 import StateLifting from './stateLifting/StateLifting';
 import LabelComp from './ChangeLabel/Label';
 import LabelOutput from './ChangeLabel/LabelOutput';
+
 import UserNameComponant from './ChangeLabel/UserName';
 import UserNameOutput from './ChangeLabel/UserNameOutput';
+
 import FormDisplayComp from './ChangeLabel/FormDisplay';
 import FormComponant from './ChangeLabel/Form';
 import PostList from './learn_useffect/postList';
@@ -28,6 +30,25 @@ import UserName from './UserName';
 import PhotoList from './learn_useffect/PhotoList';
 import AlbumList from './learn_useffect/albumList';
 import FetchUserById from './learn_useffect/FetchUserById';
+import FetchCommentById from './learn_useffect/FetchCommentById';
+import FetchAlbumById from './learn_useffect/FetchAlbumById';
+import FetchPhotosByid from './learn_useffect/FetchPhotosById';
+import TodosListByAPI from './learn_useffect/TodosListByAPI';
+import PostListByAPI from './learn_useffect/PostListByAPI';
+// import Greeting from './Props_learning/PropsLearning';
+import MultipleProps from './Props_learning/PropsLearning';
+import PorpsSpreadOperator from './Props_learning/PropsSpreadOperator'
+import RegistrationFormOfComponant from './ChangeLabel/RegistrationForm';
+import RegistrationFormDisplay from './ChangeLabel/RegistrationFormDisplay';
+import TodoList from './reducers/TodoList';
+import CountOfNumberCalculation from './reducers/Count';
+import CalcualteArea from './reducers/CalculateArea';
+import CalculateVolumeOfCuboid from './reducers/CalculateVolume';
+import AreaOfCircle from './reducers/areaOfCircle';
+import LoginFormComp from './reducers/LoginForm';
+import RegistrationFormComp from './reducers/RegistrationForm';
+import FamilyNamecomp from './reducers/FamilyNameComp';
+
 
 function App() {
   const [selectedMenu, setSelectedMenu] = useState('Home');
@@ -40,10 +61,13 @@ function App() {
   const [password, setPassword] = useState('')
   const [fName, setFname] = useState(''); 
   const [lname, setlName] = useState('');
-  const [user, setUser] = useState('N/A');
+  const [phone, setPhone ] = useState();
+  const [user, setUser] = useState('');
   const [userInfoObj, setUserInfoObj] = useState({});
+  // const [userInfoObjects, setUserInfoObjects] = useState({});
 
 
+                                                                                                            
   
 
   const handleSelectMenuItem = (menuItem) => {
@@ -59,25 +83,39 @@ function App() {
     setColor(color)
     setBgColor(bgcolor)
  }
+//   
+
+//  const setLabelData = (label, color, bgcolor) => {
+//   setlabelOutput(label)
+//   setColor(color)
+//   setBgColor(bgcolor)
+// }
 
  const setUserData = (userName, password) => {
     setUserName(userName)
     setPassword(password)
 }
- const setFormData = (fName, lname, email, password) => {
+ const setFormData = (fName, lname, email, phone, password) => {
     setFname(fName)
     setlName(lname)
     setUser(email)
     setPassword(password)
- }
+    setPhone(phone)
+    // setUserInfoObj()
+  }
+ 
 
  const setJsonFormData = (a) => {
   setUserInfoObj(a)
  }
 
+
+
   const setOutputJsonData=(userObject) => {
     setUserObject(userObject)
   }
+
+  const userinformation = {name:'Vikash', age: 25};
 
   let comp = '';
   if(selectedMenu === 'Admission') {
@@ -132,10 +170,25 @@ function App() {
         <UserNameOutput userName={userName} password={password} />
       </div>
     </div>
+  } else if(selectedMenu === 'RegistrationForm') {
+    comp = <div className='row'>
+      <div className='col-6'>
+          <RegistrationFormOfComponant setFormData={setFormData} setJsonFormData={setJsonFormData } />
+      </div>
+      <div className='col-6'>
+        <RegistrationFormDisplay 
+        fname={fName}
+        lname={lname}
+        phone={phone}
+        password={password}
+        userInfoObj = {userInfoObj}
+        />
+      </div>
+    </div>
   } else if(selectedMenu === 'Form') {
     comp = <div className='row'>
       <div className='col-6'>
-        <FormComponant setFormData={setFormData} setJsonFormData={setJsonFormData}/> 
+        <FormComponant setFormData={setFormData}/> 
       </div>
       <div className='col-6'>
         <FormDisplayComp
@@ -181,11 +234,40 @@ function App() {
     comp = <AlbumList />
   } else if (selectedMenu === 'FetchUserById') {
     comp = <FetchUserById />
+  } else if (selectedMenu==='FetchCommentById') {
+    comp = <FetchCommentById />
+  } else if (selectedMenu === 'FetchAlbumById') {
+    comp = <FetchAlbumById />
+  } else if (selectedMenu === 'FetchPhotosByid') {
+    comp = <FetchPhotosByid />
+  } else if (selectedMenu ==='TodosListByAPI') {
+    comp = <TodosListByAPI />
+  } else if (selectedMenu === 'PostListByAPI')  {
+    comp = <PostListByAPI />
+  } else if (selectedMenu ==='Props_practice') {
+    // comp = <Greeting name='Vikash Singh' />
+    comp = <MultipleProps name='Vikash Singh' age={24} />;
+  } else if (selectedMenu === 'PropsSpreadOperator') {
+    comp = <PorpsSpreadOperator {...userinformation} />
+  } else if (selectedMenu === 'useReducer') {
+    comp = <TodoList />
+  } else if ( selectedMenu === 'countNumber') {
+    comp = <CountOfNumberCalculation />
+  } else if ( selectedMenu ==='selectedArea') {
+    comp =  <CalcualteArea />
+  } else if (selectedMenu === 'Area') {
+    comp = <AreaOfCircle />
+  }  else if (selectedMenu === 'LoginForm') {
+    comp = <LoginFormComp />
+  } else if (selectedMenu === 'Registration Form') {
+    comp = <RegistrationFormComp />  
+  }  else if (selectedMenu === 'CalculateVolume') {
+    comp = <CalculateVolumeOfCuboid />
+  } else if (selectedMenu === 'FamilyName') {
+    comp = <FamilyNamecomp />
   } else {
     comp = <h3 className='text-center'>You are at {selectedMenu} Page</h3>
-  }
-
-  return (
+    }  return (
     <div className='container'>
       <div className='row'>
         <div className='col-3'>

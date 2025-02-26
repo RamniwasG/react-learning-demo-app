@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 const UserNameComponant = ({ setLabelData }) => {
 
     const [userName, setuserName] = useState('');
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState('12345');
 
     const handleUserChange = (event) => {
         const { value } = event.target;

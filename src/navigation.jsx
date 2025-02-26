@@ -4,7 +4,10 @@ const menuList = ['Home', 'Admission', 'Login', 'Counter_App',
         'State_Learning', 'Mathmetical_App', 'State_lifting',
         'label', 'userName', 'Form', 'Calculaion Area', 'Learn_useEffect',
         'BasicCard', 'Table_Data', 'Apps', 'UserName', 'UserComp', 'UsersBiodata',
-        'PhotosList', 'AlbumList', 'FetchUserById'
+        'PhotosList', 'AlbumList', 'FetchUserById', 'FetchCommentById', 'FetchAlbumById', 'FetchPhotosByid',
+        'TodosListByAPI', 'PostListByAPI', 'Props_practice', 'PropsSpreadOperator', 'RegistrationForm',
+        'useReducer', 'countNumber', 'selectedArea', 'CalculateVolume', 'Area', 'LoginForm', 
+        'Registration Form', 'FamilyName'
     ]
 
 const NavigationComp = ({ selectedMenu, onSetSelectedMenu }) => {

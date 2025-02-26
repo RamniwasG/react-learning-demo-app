@@ -61,6 +61,7 @@ function UsersBiodata () {
                 </thead>
                 <tbody>
                     {biodata && biodata.length > 0  && biodata.map((user, index) =>{
+                        // return <tr key={user.id+index}
                         return <tr key={user.id+index}
                             className={user.id === selectedUser?.id ? 'table-danger' : 'table-primary'}
                             onClick={() => handleUserItemClick(user)}
